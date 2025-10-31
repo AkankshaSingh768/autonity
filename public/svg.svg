@@ -1,0 +1,84 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="900" height="240" role="img" aria-label="Autonity logo">
+  <!-- Background (black) -->
+  <rect width="100%" height="100%" fill="#000"></rect>
+
+  <!-- Glow filter -->
+  <defs>
+    <filter id="neonGlow" x="-200%" y="-200%" width="400%" height="400%">
+      <!-- outer blur glow -->
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur1"></feGaussianBlur>
+      <feMorphology in="blur1" operator="dilate" radius="1" result="morph"></feMorphology>
+      <feGaussianBlur in="morph" stdDeviation="12" result="blur2"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur2"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- softer inner glow for icon -->
+    <filter id="softGlow" x="-200%" y="-200%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="6" result="g1"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="g1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- neon green color as paint -->
+    <linearGradient id="neonGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00ff84"></stop>
+      <stop offset="100%" stop-color="#00e36a"></stop>
+    </linearGradient>
+
+    <!-- subtle text shadow for crispness -->
+    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="0" result="off"></feOffset>
+      <feGaussianBlur in="off" stdDeviation="6" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Icon (left) -->
+  <g transform="translate(90,120)" filter="url(#softGlow)">
+    <!-- glowing ring -->
+    <circle cx="0" cy="0" r="62" stroke="url(#neonGrad)" stroke-width="6" fill="none" opacity="0.95"></circle>
+    <!-- inner filled circle for contrast -->
+    <circle cx="0" cy="0" r="36" fill="rgba(0,0,0,0.18)"></circle>
+    <!-- small circuit lines / nodes -->
+    <g stroke="url(#neonGrad)" stroke-linecap="round" stroke-width="4" fill="none">
+      <path d="M -16 -14 l -22 -26"></path>
+      <circle cx="-40" cy="-40" r="4" fill="#00ff84" stroke="none"></circle>
+      <path d="M 18 -12 l 26 -18"></path>
+      <circle cx="44" cy="-30" r="4" fill="#00ff84" stroke="none"></circle>
+      <path d="M -8 10 l -26 28"></path>
+      <circle cx="-36" cy="40" r="4" fill="#00ff84" stroke="none"></circle>
+      <path d="M 12 8 l 28 24"></path>
+      <circle cx="44" cy="38" r="4" fill="#00ff84" stroke="none"></circle>
+    </g>
+    <!-- central tiny chip / node -->
+    <rect x="-8" y="-8" width="16" height="16" rx="3" fill="#00ff84" opacity="0.14"></rect>
+    <rect x="-6" y="-6" width="12" height="12" rx="2" fill="#00ff84" opacity="0.28"></rect>
+  </g>
+
+  <!-- Logo text -->
+  <g transform="translate(220,150)" filter="url(#textShadow)">
+    <text x="0" y="0" style="font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                 font-weight: 700; font-size: 78px; letter-spacing: -1.5px;
+                 fill: url(#neonGrad);" paint-order="stroke fill">
+      Autonity
+    </text>
+
+    <!-- thin neon underline -->
+    <rect x="0" y="12" width="420" height="4" rx="2" fill="#00ff84" opacity="0.9" filter="url(#neonGlow)"></rect>
+  </g>
+
+  <!-- apply a final subtle large glow over whole logo -->
+  <g filter="url(#neonGlow)" opacity="0.85">
+    <!-- faint larger ring to blend with background if needed -->
+    <circle cx="90" cy="120" r="110" fill="none" stroke="#00ff84" stroke-width="2" opacity="0.06"></circle>
+  </g>
+</svg>
