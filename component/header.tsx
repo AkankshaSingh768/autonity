@@ -81,7 +81,7 @@ export default function Header() {
       </div>
 
       {/* SVG Section */}
-      <div className="z-0 gap-3 relative flex items-center justify-center lg:mt-50 md:mt-8 mt-12 px-3 py-2 rounded-full bg-white/10 cursor-pointer">
+      <div className="z-0 gap-3 relative flex items-center justify-center lg:mt-50 md:mt-8 mt-3 px-3 py-2 rounded-full bg-white/10 cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
