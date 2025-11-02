@@ -4,6 +4,9 @@ import Forwardandbeyond from "@/component/forward&beyond";
 import ConditionalLogic from "@/component/conditionalLogic";
 import WorkflowLogic from "@/component/workflowLogic";
 import Integrations from "@/component/Integrations";
+import RealImpact from "@/component/realImpact";
+import Movefaster from "@/component/movefaster";
+import Footer from "@/component/footer";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
     <ConditionalLogic />
     <WorkflowLogic />
     <Integrations />
+    <RealImpact />
+    <Movefaster />
+    <Footer />
   
    </div>
   );
