@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function RealImpact() {
   const testimonials = [
@@ -9,7 +10,7 @@ export default function RealImpact() {
       role: "Project Manager",
       company: "AlphaWave",
       quote: "Fast, flexible, and genuinely smart.",
-      image: "/people/p1.jpg",
+      image: "/OIP3.webp",
     },
     {
       id: 2,
@@ -17,7 +18,7 @@ export default function RealImpact() {
       role: "Engineering Lead",
       company: "Clandestine",
       quote: "One of the best tools shaping the future of work.",
-      image: "/people/p2.jpg",
+      image: "/OIP7.webp",
     },
     {
       id: 3,
@@ -25,7 +26,7 @@ export default function RealImpact() {
       role: "Head of Marketing",
       company: "Lightspeed",
       quote: "Clean, intuitive, and ridiculously fast.",
-      image: "/people/p3.jpg",
+      image: "/OIP7.webp",
     },
     {
       id: 4,
@@ -33,7 +34,7 @@ export default function RealImpact() {
       role: "Product Manager",
       company: "Visionwork",
       quote: "It fits right into how we work.",
-      image: "/people/p4.jpg",
+      image: "/OIP4.webp",
     },
     {
       id: 5,
@@ -41,15 +42,20 @@ export default function RealImpact() {
       role: "Product Manager",
       company: "Visionwork",
       quote: "It fits right into how we work.",
-      image: "/people/p4.jpg",
+      image: "/OIP5.webp",
     },
   ];
 
   return (
-    <div className="bg-black text-white py-24">
+    <div id="realImact" className="bg-black  text-white py-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
+        <motion.div
+        initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once:false, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+         className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
           <h1 className="text-3xl md:text-5xl font-semibold leading-tight max-w-2xl">
             Quick Takes That Capture
             <br /> the Real Impact
@@ -58,10 +64,15 @@ export default function RealImpact() {
             No fluff, just quick feedback from people who’ve actually used it to
             move faster and do more.
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonial Boxes Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once:false, amount: 0.4 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t) => (
             <div
               key={t.id}
@@ -89,7 +100,7 @@ export default function RealImpact() {
               </p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -9,4 +9,8 @@ body {
   background-size: cover;
   color: white;
   font-family: 'Poppins', sans-serif;
+  
+}
+*{
+  scroll-behavior: smooth;
 }
