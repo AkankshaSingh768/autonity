@@ -9,7 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative fixed flex flex-col w-full min-h-screen bg-black overflow-hidden">
+    <div className="relative flex flex-col w-full min-h-screen bg-black overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
